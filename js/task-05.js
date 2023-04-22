@@ -1,9 +1,9 @@
-const userName = document.querySelector('h1 #name-output');
-const input = document.querySelector('#name-input');
+const userNameEl = document.querySelector('h1 #name-output');
+const inputEl = document.querySelector('#name-input');
 
-const makeUserName = () =>
-    (input.value.length === 0) ? 
-        userName.textContent = 'Anonymous':
-        userName.textContent = input.value;
+const handleAddressByUserNameInput = () =>
+    (inputEl.value.length === 0) ? 
+        userNameEl.textContent = 'Anonymous':
+        userNameEl.textContent = inputEl.value;
 
-input.addEventListener('input', makeUserName);
+inputEl.addEventListener('input', handleAddressByUserNameInput);
