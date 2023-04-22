@@ -25,4 +25,4 @@ const galleryItemsRow = images
   )
   .join('');
 
-listGalleryEl.insertAdjacentHTML("afterbegin", galleryItemsRow);
+listGalleryEl.insertAdjacentHTML('afterbegin', galleryItemsRow);
