@@ -1,14 +1,14 @@
-const value = document.querySelector('#value')
 let counterValue = 0;
 
+const value = document.querySelector('#value')
+value.textContent = counterValue;
+
 function handleBtnDecrementClick() {
-    counterValue -= 1;
-    return value.textContent = counterValue;
+    return value.textContent = counterValue-=1;
 };
 
 function handleBtnIncrement() {
-    counterValue += 1;
-    return value.textContent = counterValue;
+    return value.textContent = counterValue += 1;
 };
 
 const btnDecrement = document.querySelector('button[data-action]')
