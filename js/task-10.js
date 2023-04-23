@@ -10,12 +10,18 @@ const btnDestroyEl = document.querySelector('[data-destroy]');
 const containerEl = document.querySelector('#boxes');
 const boxesFragment = document.createDocumentFragment();
 
+btnCreateEl.addEventListener('click', startMakeBoxes);
+btnDestroyEl.addEventListener('click', destroyBoxes);
+
 function startMakeBoxes() {
   const amount = Number(inputEl.value);
-  createBoxes(amount);
-}
-
-btnCreateEl.addEventListener('click', startMakeBoxes);
+  if (amount > 0 && amount <= 100) {
+    destroyBoxes();
+    createBoxes(amount);
+  } else {
+    alert('Please, enter a number from 0 to 100');
+  }
+};
 
 function createBoxes(amount) {
   for (let i = 1; i <= amount; i++){
@@ -27,8 +33,7 @@ function createBoxes(amount) {
     boxesFragment.appendChild(boxCreate);
   } containerEl.append(boxesFragment);
 };
+
 function destroyBoxes() {
   containerEl.innerHTML = '';
-}
-
-btnDestroyEl.addEventListener('click', destroyBoxes);
+};
