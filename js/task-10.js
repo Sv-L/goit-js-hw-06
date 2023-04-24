@@ -13,13 +13,15 @@ const boxesFragment = document.createDocumentFragment();
 btnCreateEl.addEventListener('click', startMakeBoxes);
 btnDestroyEl.addEventListener('click', destroyBoxes);
 
+const min = inputEl.min;
+const max = inputEl.max;
+
 function startMakeBoxes() {
   const amount = Number(inputEl.value);
-  if (amount > 0 && amount <= 100) {
-    destroyBoxes();
+  if (amount >= min && amount <= max) {
     createBoxes(amount);
   } else {
-    alert('Please, enter a number from 0 to 100');
+    alert(`Please, enter a number from ${min} to ${max}`);
   }
 };
 
@@ -35,5 +37,6 @@ function createBoxes(amount) {
 };
 
 function destroyBoxes() {
+  inputEl.value = '';
   containerEl.innerHTML = '';
 };
