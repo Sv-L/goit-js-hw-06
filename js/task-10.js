@@ -8,7 +8,6 @@ const inputEl = document.querySelector('#controls input');
 const btnCreateEl = document.querySelector('[data-create]');
 const btnDestroyEl = document.querySelector('[data-destroy]');
 const containerEl = document.querySelector('#boxes');
-const boxesFragment = document.createDocumentFragment();
 
 btnCreateEl.addEventListener('click', startMakeBoxes);
 btnDestroyEl.addEventListener('click', destroyBoxes);
@@ -26,14 +25,14 @@ function startMakeBoxes() {
 };
 
 function createBoxes(amount) {
+  let boxesHtml = '';
   for (let i = 1; i <= amount; i++){
-    const boxCreate = document.createElement('div');
-    boxCreate.style.backgroundColor = `${getRandomHexColor()}`;
-    let size = 20 + i * 10;
-    boxCreate.style.width = `${size}px`;
-    boxCreate.style.height = `${size}px`;
-    boxesFragment.appendChild(boxCreate);
-  } containerEl.append(boxesFragment);
+    const color = `${getRandomHexColor()}`;
+    const size = 20 + i * 10;
+   const boxHtml = `<div style="background-color: ${color}; width: ${size}px; height: ${size}px;"></div>`;
+    boxesHtml += boxHtml;
+  }
+  containerEl.insertAdjacentHTML('beforeend', boxesHtml);
 };
 
 function destroyBoxes() {
