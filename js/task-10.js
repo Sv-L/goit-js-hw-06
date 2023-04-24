@@ -25,14 +25,14 @@ function startMakeBoxes() {
 };
 
 function createBoxes(amount) {
-  let boxesHtml = '';
+  let boxesEl = '';
   for (let i = 1; i <= amount; i++){
     const color = `${getRandomHexColor()}`;
     const size = 20 + i * 10;
-   const boxHtml = `<div style="background-color: ${color}; width: ${size}px; height: ${size}px;"></div>`;
-    boxesHtml += boxHtml;
+   const boxEl = `<div style="background-color: ${color}; width: ${size}px; height: ${size}px;"></div>`;
+    boxesEl += boxEl;
   }
-  containerEl.insertAdjacentHTML('beforeend', boxesHtml);
+  containerEl.insertAdjacentHTML('beforeend', boxesEl);
 };
 
 function destroyBoxes() {
