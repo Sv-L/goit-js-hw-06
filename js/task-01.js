@@ -6,5 +6,5 @@ const listElchildrenArr = Array.from(listEl.children);
 
 listElchildrenArr.forEach((element) => {
     console.log(`Category: ${element.firstElementChild.textContent}`)
-    console.log (`Elements: ${element.children[1].childElementCount}`)
+    console.log (`Elements: ${element.lastElementChild.childElementCount}`)
 });
